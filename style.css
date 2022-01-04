@@ -1,0 +1,31 @@
+body{
+    height: 100%;
+    background-color: olivedrab;
+    align-items: center;
+    text-align: center;
+    font-family: "Avenir Next", serif;
+}
+
+#ville{
+    font-size: 25px;
+}
+label{
+    font-size: 25px;
+}
+img{
+    width: 140px;
+    height: 140px;
+}
+
+#temperature, #condition{
+    font-size: 45px;
+    color: bisque;
+}
+
+.align{
+    text-align: center;
+}
+
+.bloc{
+    margin: 50px;
+}
