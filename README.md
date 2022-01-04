@@ -12,9 +12,9 @@ JS- JavaScript
 HTML/CSS
 
 #API
-IP: https://api.my-ip.io/ip.json
+IP: https://api.my-ip.io
 ***
-VILLE: http://ip-api.com/json/
+VILLE: http://ip-api.com
 ***
-METEO:http://api.weatherstack.com/current?access_key=[TOKEN]&query=[VILLE]
+METEO:http://api.weatherstack.com
 
