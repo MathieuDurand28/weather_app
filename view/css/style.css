@@ -29,3 +29,7 @@ img{
 .bloc{
     margin: 50px;
 }
+
+.hide{
+    display: none;
+}

@@ -35,16 +35,21 @@ function main(withIP = true) {
         }
         const meteo = yield fetch(`http://api.weatherstack.com/current?access_key=ac24823841a02bb04fa6e983372109db&query=${ville}`)
             .then(result => result.json())
-            .then(data => data.current)
+            .then(data => data)
             .catch(err => {
             console.log(`Une erreur est survenue lors de l'optention de la meteo, ${err}`);
         });
         console.log(`WEATHER: ${JSON.stringify(meteo, null, 4)}\n***************************`);
-        if (typeof meteo !== "undefined") {
+        if (!meteo.success) {
+            document.querySelector("#temperature").textContent = meteo.error.info;
+            document.querySelector(".input_ville").setAttribute("class", "hide");
+            document.querySelector("#wi").setAttribute("class", "hide");
+        }
+        else if (typeof meteo.current !== undefined) {
             document.querySelector("#temperature").textContent = (withIP)
-                ? `En se basant sur votre IP, il fait actuellement ${meteo.temperature}°C à ${ville.toUpperCase()}`
-                : `Il fait actuellement ${meteo.temperature}°C à ${ville.toUpperCase()}`;
-            document.querySelector("#wi").setAttribute("src", meteo.weather_icons[0]);
+                ? `En se basant sur votre IP, il fait actuellement ${meteo.current.temperature}°C à ${ville.toUpperCase()}`
+                : `Il fait actuellement ${meteo.current.temperature}°C à ${ville.toUpperCase()}`;
+            document.querySelector("#wi").setAttribute("src", meteo.current.weather_icons[0]);
         }
         else {
             document.getElementById("ville").value = "Ville inconnue !";
