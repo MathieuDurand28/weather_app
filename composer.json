@@ -1,0 +1,17 @@
+{
+    "name": "mathieu/weather_app",
+    "require": {
+        "twig/twig": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mathieu\\WeatherApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mathieu",
+            "email": "dev.durand.mathieu@gmail.com"
+        }
+    ]
+}
